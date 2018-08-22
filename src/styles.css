@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+nav a.active {
+    color:orange;
+}
+nav a {
+    display:block;
+    padding:6px 20px;
+    min-width: 200px;
+}
+
+ul > li.selected {
+    background-color:#666;
+    color:#fff;
+    padding:6px 10px;
+    max-width: 200px;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-anime-list',
@@ -23,9 +24,14 @@ export class AnimeListComponent implements OnInit {
     {id:5, title:'sword gai', episode:12, series:2},
   ]
 
-  constructor(private router:Router, private activatedRoute:ActivatedRoute) { }
+  constructor(private router:Router, private activatedRoute:ActivatedRoute, private userService:UserService) { }
 
   ngOnInit() {
+
+    this.userService.testRequest().subscribe( response => {
+      console.log( response );
+    });
+
     this.activatedRoute.paramMap.subscribe( (params: ParamMap) => {
       let id = parseInt( params.get('id') );
       this.selectedId = id;

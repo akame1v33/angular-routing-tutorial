@@ -28,9 +28,10 @@ export class AnimeDetailComponent implements OnInit {
   private animeId;
   constructor(private activatedRoute: ActivatedRoute, private router:Router) { }
 
+
+
   ngOnInit() {
-    // let selectedId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
- 
+
     this.activatedRoute.paramMap.subscribe( (params: ParamMap) => {
       let id = parseInt( params.get('id') );
       this.animeId = id;

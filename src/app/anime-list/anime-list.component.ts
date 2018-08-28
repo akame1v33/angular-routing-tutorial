@@ -27,7 +27,7 @@ export class AnimeListComponent implements OnInit {
   constructor(private router:Router, private activatedRoute:ActivatedRoute, private userService:UserService) { }
 
   ngOnInit() {
-
+    // localStorage.setItem('token','FUCK');
     this.userService.testRequest().subscribe( response => {
       console.log( response );
     });
